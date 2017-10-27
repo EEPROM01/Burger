@@ -1,0 +1,24 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "moose!"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEPROM01/Burger.git"
+  },
+  "author": "WST",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EEPROM01/Burger/issues"
+  },
+  "homepage": "https://github.com/EEPROM01/Burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  }
+}
