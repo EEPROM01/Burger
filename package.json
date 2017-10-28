@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/EEPROM01/Burger/issues"
   },
-  "homepage": "https://github.com/EEPROM01/Burger#readme",
+  "homepage": "https://github.com/EEPROM01/server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
     "method-override": "^2.3.10",
