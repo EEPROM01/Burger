@@ -1,11 +1,18 @@
-var express = require("express");
-
-var app = express();
-var PORT = process.env.PORT || 8080;
-
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  }); 
-
-
-  module.exports=connection;
+var mysql = require("mysql");
+var connection = mysql.createConnection({
+  port: 3306,
+  host: "localhost",
+  user: "root",
+  password: "19ZoSo99",
+  database: "burgers_db"
+});
+// Make connection.
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
+// Export connection for our ORM to use.
+module.exports = connection;

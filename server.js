@@ -1,22 +1,24 @@
 const express = require('express');
-const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
-
-const app = express();
-
-    app.engine('handlebars', exphbs ({defaultLayout: 'main'}));
-    app.set('viewengine', 'handlebars');
 
 
-    var PORT = 3000;
-    app.listen(PORT);
+var port = process.env.PORT || 3000;
 
-    app.get('/', function(req, res){
-    app.render('burgers');
-});
+var app = express();
 
-// app.get('/', function(req, res){
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller");
+app.use("/", routes);
+app.listen(port);
+
+// app.xxx('/', function(req, res){
 //     app.render('burgers');
 // })
 
